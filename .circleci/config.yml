@@ -17,7 +17,7 @@ jobs:
   deploy:
     machine:
       enabled: true
-    working_directory: ~/gridsome-forestry-starter
+    # working_directory: ~/gridsome-forestry-starter
     steps:
   #     - run: pwd
       - attach_workspace:
