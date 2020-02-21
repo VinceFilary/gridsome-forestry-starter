@@ -13,12 +13,17 @@ jobs:
             - run: npm run build
             - run: pwd
             - run: ls
+            
   deploy:
     machine:
       enabled: true
     steps:
       - run: pwd
-      - run: ls -la
+      - run: ls ~
+      - run: cd ~
+      - run: ls
+      - run: cd ..
+      - run: ls
       - run: scp -r dist/* sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co
 
 
