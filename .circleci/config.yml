@@ -38,9 +38,13 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      - deploy:
+      - approval:
+          type: approval
           requires:
             - build
+      - deploy:
+          requires:
+            - approval
       #     filters:
       #       branches:
       #         only: master
