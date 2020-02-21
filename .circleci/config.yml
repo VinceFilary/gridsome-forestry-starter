@@ -15,7 +15,7 @@ jobs:
     machine:
       enabled: true
     steps:
-      - run: scp -r gridsome-forestry-starter/dist/* sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co
+      - run: scp -r dist/* sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co
 
 
 workflows:
