@@ -16,4 +16,6 @@ The **banana** fruits grow from a **banana** blossom in hanging clusters, al
     let code = joking
     var this = that
 
+> "Banana love is the best kind of love in the world" - Albert Einstein
+
 ![](/uploads/mike-dorner-173502-unsplash.jpg)
