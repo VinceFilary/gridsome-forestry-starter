@@ -2,7 +2,8 @@
 date: 2019-06-07
 title: Gridsome with Forestry CMS
 author: Nichlas W. Andersen
-excerpt: Get up and running with Forestry CMS, a git-backed headless CMS with a slick editing interface.
+excerpt: Get up and running with Forestry CMS, a git-backed headless CMS with a slick
+  editing interface.
 
 ---
 #### Use Forestry as a CMS for Gridsome
@@ -17,7 +18,7 @@ You can import this starter to Forestry and start editing and creating posts or 
 
 Forestry also comes with instant previews, for you to preview your content before publishing.
 
-When you save content in **Forestry**, it's commited back to your Git repository. If you link your repository to a service like **Netlify** or **Next**, on every push, your site will be deployed over to a CDN network.
+When you save content in **Forestry**, it's commited back to your Git repository. If you link your repository to a service like **Netlify** or **ZEIT**, on every push, your site will be deployed over to a CDN network.
 
 Enjoy the best development and user experience! 🚀
 
