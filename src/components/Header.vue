@@ -40,6 +40,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
+    background-color: white;
 }
 .header > .container {
     display: flex;
