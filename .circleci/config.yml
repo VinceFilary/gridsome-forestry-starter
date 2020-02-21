@@ -15,7 +15,7 @@ jobs:
           steps:
             - run: npm install
             - run: npm run build
-            - run: scp -r -o dist/* sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co
+            - run: scp -r -o StrictHostKeyChecking=no dist/* sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co
 
   # deploy:
   #   machine:
