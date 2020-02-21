@@ -6,7 +6,7 @@ excerpt: Get up and running with Forestry CMS, a git-backed headless CMS with a 
   editing interface.
 
 ---
-#### Use Forestry as a CMS for Gridsome
+#### Forestry as a CMS for Gridsome
 
 [Forestry](https://forestry.io) is a git-based headless CMS that allows editorial teams to work on JAMstack sites.
 
