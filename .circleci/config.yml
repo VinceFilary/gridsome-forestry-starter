@@ -5,6 +5,7 @@ jobs:
   build:
     executor:
       name: node/default
+    working_directory: ~/gridsome-forestry-starter
     steps:
       - checkout
       - node/with-cache:
@@ -17,6 +18,7 @@ jobs:
   deploy:
     machine:
       enabled: true
+    working_directory: ~/gridsome-forestry-starter
     steps:
       - run: pwd
       - run: ls ~
