@@ -14,18 +14,15 @@ jobs:
             - run: npm run build
             - run: pwd
             - run: ls
-            
+
   deploy:
     machine:
       enabled: true
     working_directory: ~/gridsome-forestry-starter
     steps:
       - run: pwd
-      - run: ls ~
-      - run: cd ~
       - run: ls
-      - run: cd ..
-      - run: ls
+      - run: ls -la
       - run: scp -r dist/* sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co
 
 
