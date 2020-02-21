@@ -8,24 +8,24 @@ jobs:
     # working_directory: ~/gridsome-forestry-starter
     steps:
       - checkout
-      # - add_ssh_keys:
-      #     fingerprints:
-      #       - d9:52:e5:40:89:0b:b5:da:8f:10:c9:7c:ec:6b:e8:f0
       - node/with-cache:
           steps:
             - run: npm install
             - run: npm run build
-            - run: echo ${HOST_FINGERPRINT} >> ~/.ssh/known_hosts
-            - run: sudo apt install rsync
-            - run: rsync -rhv --delete dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co/
-
-  # deploy:
+            - persist_to_workspace:
+                root: dist
+  deploy:
   #   machine:
   #     enabled: true
-  #   working_directory: ~/gridsome-forestry-starter
-  #   steps:
+    working_directory: ~/gridsome-forestry-starter
+    steps:
   #     - run: pwd
-  #     - run: ls
+      - attach_workspace:
+          at: dist
+      - run: ls
+      - run: echo ${HOST_FINGERPRINT} >> ~/.ssh/known_hosts
+      - run: sudo apt install rsync
+      - run: rsync -rhv --delete dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co/
   #     - run: ls -la
   #     - run: scp -r dist/* sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co
 
@@ -35,9 +35,9 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      # - deploy:
-      #     requires:
-      #       - build
+      - deploy:
+          requires:
+            - build
       #     filters:
       #       branches:
       #         only: master
