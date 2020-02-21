@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  build-and-test:
+  build:
     executor:
       name: node/default
     steps:
@@ -10,8 +10,21 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run: npm test
+            - run: npm build
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - run: scp -r gridsome-forestry-starter/dist/* sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co
+
+
 workflows:
-    build-and-test:
+    build-and-deploy:
       jobs:
-        - build-and-test
+        - build
+        - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
