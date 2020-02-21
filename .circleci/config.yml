@@ -12,18 +12,20 @@ jobs:
           steps:
             - run: npm install
             - run: npm run build
-            - persist_to_workspace:
-                root: dist
-                paths:
-                  - dist
+            # - persist_to_workspace:
+            #     root: dist
+            #     paths:
+            #       - dist
   deploy:
-    machine:
-      enabled: true
+    # machine:
+    #   enabled: true
+    executor:
+      name: node/default
     # working_directory: ~/gridsome-forestry-starter
     steps:
   #     - run: pwd
-      - attach_workspace:
-          at: dist
+      # - attach_workspace:
+          # at: dist
       - run: ls
       - run: echo ${HOST_FINGERPRINT} >> ~/.ssh/known_hosts
       - run: sudo apt install rsync
@@ -33,7 +35,6 @@ jobs:
 
 
 workflows:
-  version: 2
   build-and-deploy:
     jobs:
       - build
