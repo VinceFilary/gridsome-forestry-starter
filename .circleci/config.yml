@@ -8,6 +8,9 @@ jobs:
     working_directory: ~/gridsome-forestry-starter
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - d9:52:e5:40:89:0b:b5:da:8f:10:c9:7c:ec:6b:e8:f0
       - node/with-cache:
           steps:
             - run: npm install
