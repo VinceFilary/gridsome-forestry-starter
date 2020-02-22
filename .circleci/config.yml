@@ -5,8 +5,6 @@ jobs:
   build:
     executor:
       name: node/default
-    # working_directory: ~/gridsome-forestry-starter
-    # working_directory: ~/project
     steps:
       - checkout
       - attach_workspace:
@@ -15,29 +13,18 @@ jobs:
           steps:
             - run: npm install
             - run: npm run build
-            # - persist_to_workspace:
-            #     root: dist
-            #     paths:
-            #       - dist
       - persist_to_workspace:
           root: .
           paths: dist
   deploy:
     executor:
-      name: node/default
-    # working_directory: ~/gridsome-forestry-starter
+      machine: true
     steps:
       - attach_workspace:
           at: ~/project
-  #     - run: pwd
-      # - attach_workspace:
-          # at: dist
-      - run: ls
       - run: echo ${HOST_FINGERPRINT} >> ~/.ssh/known_hosts
       - run: sudo apt install rsync
       - run: rsync -rhv --delete dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co/
-  #     - run: ls -la
-  #     - run: scp -r dist/* sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co
 
 
 workflows:
