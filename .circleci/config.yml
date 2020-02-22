@@ -5,10 +5,12 @@ jobs:
   build:
     executor:
       name: node/default
-    working_directory: ~/testing
     # working_directory: ~/gridsome-forestry-starter
+    # working_directory: ~/project
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/project
       - node/with-cache:
           steps:
             - run: npm install
@@ -17,12 +19,16 @@ jobs:
             #     root: dist
             #     paths:
             #       - dist
+      - persist_to_workspace:
+          root: .
+          paths: dist
   deploy:
     executor:
       name: node/default
-    working_directory: ~/testing
     # working_directory: ~/gridsome-forestry-starter
     steps:
+      - attach_workspace:
+          at: ~/project
   #     - run: pwd
       # - attach_workspace:
           # at: dist
