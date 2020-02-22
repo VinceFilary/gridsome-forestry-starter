@@ -1,15 +1,10 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
-executors:
-  node:
-    machine: 
-      - image: node/default
 jobs:
   build:
-    executor: node
-    # executor:
-    #   name: node/default
+    executor:
+      name: node/default
     # working_directory: ~/gridsome-forestry-starter
     steps:
       - checkout
@@ -22,9 +17,8 @@ jobs:
             #     paths:
             #       - dist
   deploy:
-    # executor:
-    #   name: node/default
-    executor: node
+    executor:
+      name: node/default
     # working_directory: ~/gridsome-forestry-starter
     steps:
   #     - run: pwd
