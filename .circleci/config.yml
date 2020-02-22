@@ -24,7 +24,7 @@ jobs:
       - run: echo ${HOST_FINGERPRINT} >> ~/.ssh/known_hosts
       - run: sudo apt install rsync
       - run: rsync -rhv --delete dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co/
-
+# comment
 
 workflows:
   build-and-deploy:
