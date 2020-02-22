@@ -5,6 +5,7 @@ jobs:
   build:
     executor:
       name: node/default
+    working_directory: ~/testing
     # working_directory: ~/gridsome-forestry-starter
     steps:
       - checkout
@@ -19,6 +20,7 @@ jobs:
   deploy:
     executor:
       name: node/default
+    working_directory: ~/testing
     # working_directory: ~/gridsome-forestry-starter
     steps:
   #     - run: pwd
