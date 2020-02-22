@@ -3,7 +3,7 @@ orbs:
   node: circleci/node@1.1.6
 executors:
   node:
-    name: node/default
+    machine: node/default
 jobs:
   build:
     executor: node
