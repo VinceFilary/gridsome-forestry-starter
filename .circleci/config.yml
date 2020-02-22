@@ -16,7 +16,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: dist
-  deploy:
+  deploy-prod:
     machine: true
     steps:
       - attach_workspace:
@@ -24,15 +24,28 @@ jobs:
       - run: echo ${HOST_FINGERPRINT} >> ~/.ssh/known_hosts
       - run: sudo apt install rsync
       - run: rsync -rhv --delete dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/grid.sfcandle.co/
-# comment
+  deploy-dev:
+    machine: true
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run: echo ${HOST_FINGERPRINT} >> ~/.ssh/known_hosts
+      - run: sudo apt install rsync
+      - run: rsync -rhv --delete dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/dev.sfcandle.co/
 
 workflows:
   build-and-deploy:
     jobs:
       - build
-      - deploy:
+      - deploy-prod:
           requires:
             - build
           filters:
             branches:
               only: master
+      - deploy-dev:
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev
