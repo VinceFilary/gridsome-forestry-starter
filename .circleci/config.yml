@@ -33,7 +33,7 @@ jobs:
           at: ~/project
       - run: echo ${HOST_FINGERPRINT} >> ~/.ssh/known_hosts
       - run: sudo apt install rsync
-      - run: rsync -rhv --delete --exclude=/.htpasswd dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/dev.sfcandle.co/
+      - run: rsync -rhv --delete --exclude=/.htpasswd --exclude=/.htaccess dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/dev.sfcandle.co/
 
   deploy-forestry:
     machine: true
@@ -42,7 +42,7 @@ jobs:
           at: ~/project
       - run: echo ${HOST_FINGERPRINT} >> ~/.ssh/known_hosts
       - run: sudo apt install rsync
-      - run: rsync -rhv --delete dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/forestry.sfcandle.co/
+      - run: rsync -rhv --delete --exclude=/.htpasswd --exclude=/.htaccess dist/ sfcandle@zarniwoop.dreamhost.com:/home/sfcandle/forestry.sfcandle.co/
 
 workflows:
   build-and-deploy:
