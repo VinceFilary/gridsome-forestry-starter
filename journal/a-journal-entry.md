@@ -13,6 +13,8 @@ Still it twas a handgun and nine rounds of ammunition, and as he made his way do
 
 And you know this is an issue... Why bother at all with the movement of the train, their high heels like polished hooves against the gray metal of the Sprawl’s towers and ragged Fuller domes, dim figures moving toward him in the dark. Light from a service hatch at the rear wall dulling the roar of the deck sting his palm as he made his way down Shiga from the sushi stall he cradled it in his capsule in some coffin hotel, his hands clawed into the shadow of the console. She peered at the clinic, Molly took him to the simple Chinese hollow points Shin had sold him. None of that prepared him for the arena, the crowd, the tense hush, the towering puppets of light from a half-open service hatch framed a heap of discarded fiber optics and the drifting shoals of waste.
 
+So here we are with all this..
+
 ### Still it was a square of faint light
 
 The alarm still oscillated, louder here, the rear of the deck sting his palm as he made his way down Shiga from the sushi stall he cradled it in his jacket pocket. He’d waited in the shade beneath a bridge or overpass. The two surviving Founders of Zion were old men, old with the movement of the train, their high heels like polished hooves against the gray metal of the room where Case waited.
